@@ -1,0 +1,185 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{environ}
+\usepackage{tabto,enumitem}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{booktabs} % For formal tables
+
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+
+\begin{document}
+
+\noindent
+\large\textbf{PROBLEM 2} \hfill \textbf{Himani Patel} \\
+\normalsize SOEN 6011 \hfill \textbf{40071101} \\
+Function 9 :  $f(x,y)= x^y$  \hfill Date: 12/07/2019 \\
+
+\section{Assumptions}
+\begin{itemize}
+    \item User gives input for both X and Y value.
+    \item X and Y input is always a real number.
+    \item When X is negative number , Y is whole number.\\
+\end{itemize}
+
+   
+
+
+\section{Requirements}
+
+\begin{itemize}
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR1\\
+   $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 1\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Nominal \\
+   $\boldsymbol{DESCRIPTION}$     : When user input value of x and y both are 0,the system shall display an error message stating that result is undefined.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the undesirable event of zero to the power of zero\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR2\\
+   $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 1\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Nominal \\
+   $\boldsymbol{DESCRIPTION}$    : When user input value of x is 0 and y is negative value,the system shall display an error message stating that result is undefined. \\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the undesirable event of divided by zero\\
+   
+   
+  \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR3\\
+   $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 2\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Easy \\
+   $\boldsymbol{DESCRIPTION}$  : When user input value of x is 0 and y is positive number,the system shall display 0 as a result.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of zero to the power of positive value.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR4\\
+   $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 2\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Easy \\
+   $\boldsymbol{DESCRIPTION}$   : When user input value of x is negative number and y is 0 ,the system shall display 1 as a result.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of negative value to the power of zero.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR5\\
+   $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 3\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Nominal \\
+   $\boldsymbol{DESCRIPTION}$     :  When user input value of x is negative number and y is odd negative number,the system shall display any number from -1 inclusive to 0 exclusive as a result.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of negative value to the power of odd negative value.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR6\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 3\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Easy \\
+   $\boldsymbol{DESCRIPTION}$   :  When user input value of x is negative number and y is even negative number,the system shall display any number from 0 exclusive to 1 inclusive as a result.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of negative value to the power of even negative value.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR7\\
+   $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 2\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Nominal \\
+   $\boldsymbol{DESCRIPTION}$    : When user input value of x is negative number and y is odd positive number,the system shall display any number less than -1 inclusive as a result.\\
+    $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of negative value to the power of odd positive value.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR8\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 2\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Nominal \\
+   $\boldsymbol{DESCRIPTION}$    : When user input value of x is negative number and y is even positive number,the system shall display any positive number as a result.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of negative value to the power of even positive value.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR9\\
+   $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 2\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Easy \\
+   $\boldsymbol{DESCRIPTION}$    :  When user input value of x is positive number and y is 0 ,the system shall display 1 as a result.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of positive value to the power of zero.\\
+   
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR10\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 3\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Easy \\
+   $\boldsymbol{DESCRIPTION}$   :  When user input value of x is positive number and y is negative number ,the system shall display any number from 0 to 1 inclusive as a result.
+    $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of positive value to the power of negative value.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : FR11\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 3\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Easy \\
+   $\boldsymbol{DESCRIPTION}$     :  When user input value of x and y both are positive number ,the system shall display any positive number as a result.\\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to respond to the desirable event of positive value to the power of positive value.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : NFR1\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Non-Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 3\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Nominal \\
+   $\boldsymbol{DESCRIPTION}$     :  The system shall display the result within 3 seconds. \\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to achieve an efficiency of the system through response time.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : NFR2\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Non-Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 3\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Easy \\
+   $\boldsymbol{DESCRIPTION}$     :  The system shall display the helpful error messages in response to the undesirable events. \\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to achieve a robustness of the system.\\
+   
+    \item $\boldsymbol{ID}$\hspace{2.95cm}   : NFR3\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Non-Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 4\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Difficult \\
+   $\boldsymbol{DESCRIPTION}$     :  The system shall display the result value to ten digits accuracy. \\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to achieve a number formatting and an accuracy of the system.\\
+   
+   \item $\boldsymbol{ID}$\hspace{2.95cm}   : NFR4\\
+    $\boldsymbol{TYPE}$\hspace{2.2cm}   : Non-Functional Requirement\\
+   $\boldsymbol{PRIORITY}$\hspace{1.05cm} : 4\\
+   $\boldsymbol{VERSION}$\hspace{1.25cm} : 1.0\\
+   $\boldsymbol{DIFFICULTY}$\hspace{0.4cm} : Difficult \\
+   $\boldsymbol{DESCRIPTION}$     :  When the system is refreshed , The system shall provide consistent graphical user interface or the textual user interface. \\
+   $\boldsymbol{RATIONALE}$\hspace{0.8cm}: In order to achieve a number formatting and an accuracy of the system.\\
+
+ \end{itemize}
+
+\begin{thebibliography}{9}
+
+\bibitem{ISO/IEC/IEEE 29148 Standard}
+ISO/IEC/IEEE International Standard 29148\\
+\url{https://ieeexplore.ieee.org/servlet/opac?punumber=8559684}
+
+\bibitem{Four Function Calculator Requirement Specification}
+Four Function Calculator Requirement Specification\\
+\url{http://www.mathcs.richmond.edu/~barnett/cs322/assignments/1999_fall/calculator_requirements.pdf}
+
+\bibitem{Software Requirements Document of a Multi-Function Calculator}
+Software Requirements Document of a Multi-Function Calculator\\
+\url{http://www2.cs.uidaho.edu/~rinker/cs113/calculator.pdf}
+
+\bibitem{Software Requirements Specification (SRS) Template}
+Software Requirements Specification (SRS) Template\\
+\url{https://www.uccs.edu/Documents/tboult/srs.doc}
+
+\end{thebibliography}
+ 
+ 
+
+
+\end{document}
+ 
