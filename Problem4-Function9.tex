@@ -1,0 +1,100 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{environ}
+\usepackage{tabto,enumitem}
+\usepackage{lipsum}
+
+\usepackage{tabto}
+\usepackage{booktabs} % For formal tables
+
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+
+\begin{document}
+
+\noindent
+\large\textbf{PROBLEM 4} \hfill \textbf{Himani Patel} \\
+\normalsize SOEN 6011 \hfill \textbf{40071101} \\
+Function 9 :  $f(x,y)= x^y$  \hfill Date: 26/07/2019 \\
+
+\section{Debugger}
+
+A debugger or debugging tool is a computer program that is used to test and debug other programs.
+Here, the implementation of this function has done by using Eclipse IDE.Eclipse IDE uses the JDT debugger to debug the code. Hence, the JDT debugger I have used is the default Eclipse debugger.
+
+\subsection{Advantages}
+\begin{itemize}
+  
+  \item An individual can execute your Java program line by line and examine the value of variables at different points in the program.
+  \item It allows to move the current execution while executing.
+  \item It helps to locate problems in code.
+  \item An individual can debug at different levels by selecting the options of step into code/out of/over code based on their needs.
+  \end{itemize}
+
+
+\subsection{Disadvantages}
+\begin{itemize}
+  \item It doesn't show the value of a long string in whole.
+  \end{itemize}
+
+
+\section{Quality Attributes}
+Effort made towards achieving the following quality attributes are stated below: 
+
+\subsection{Correctness}
+Considered all possible range of value for both x and y value for example, considering the cases where x and y are zero ,negative,positive,integer, float. 
+
+\subsection{Efficiency}
+The algorithm is simple and that is why the speed of run time execution is fast.
+
+\subsection{Maintainability}
+Code has written by following the coding standards.It also has the Javadoc so one can easily understand the flow of the program.Therefore, So it is very easy to make changes in the code in future if any.
+
+\subsection{Robustness}
+Considered all possible states for unexpected termination and actions and implemented the code in a way to handle such actions by displaying displaying accurate and unambiguous error messages which allow the user to more easily debug the program.
+
+\subsection{Usability}
+Implemented the Graphical user interface for the function.It is easy to use and reflect clear visual consistency.
+
+\section{Check Style}
+
+Checkstyle is a development tool to help you ensure that your Java code adheres to a coding standards.Checkstyle does this by inspecting Java source code and pointing out items that differ from a defined set of coding rules.With the Checkstyle Plugin, code is constantly inspected for problems.
+The Checkstyle Plugin (eclipse-cs) integrates the well-known source code analyzer Checkstyle into the Eclipse IDE. 
+
+\subsection{Advantages}
+\begin{itemize}
+  \item It help to ensure that code follows the coding standards.
+  \item It improves the quality, readability, re-usability of the code 
+  \item It may reduce the cost of development. 
+  \item  Checkstyle can examine the following:Javadoc comments for classes, attributes and methods;Naming conventions of attributes and methods;the number of function parameters;Line lengths;the presence of mandatory headers;the use of imports, and scope modifiers;the spaces between some characters;the practices of class construction;multiple complexity measurements.
+ \end{itemize}
+  
+ \subsection{Disadvantages}
+ \begin{itemize}
+  \item  The checks performed by Checkstyle are mainly limited to the presentation of the code.
+  \item  Checks do not ensure the correctness of the code.
+  \item  Checks do not ensure the completeness of the code.
+\end{itemize}
+
+
+\begin{thebibliography}{9}
+\bibitem{Wikipedia}
+Wikipedia,\\
+\url{https://en.m.wikipedia.org/wiki/Checkstyle}
+\bibitem{Eclipse Marketplace}
+Eclipse Marketplace,\\
+\url{https://marketplace.eclipse.org/content/checkstyle-plug#group-details}
+\bibitem{Stack Exchange}
+Stack Exchange\\
+\url{https://softwareengineering.stackexchange.com/questions/131377/whats-the-benefit-of-avoiding-the-use-of-a-debugger}
+\url{https://marketplace.eclipse.org/content/checkstyle-plug#group-details}
+\bibitem{Developer.com}
+Developer.com\\
+\url{https://www.developer.com/java/other/article.php/2221711/Debugging-a-Java-Program-with-Eclipse.htm}
+\end{thebibliography}
+
+\end{document}
+ 
