@@ -170,7 +170,7 @@ public class ControllerTest
         
         /*****************************************************************
         Tests the functional requirement (FR10) -> x is Positive, y is Negative.
-               
+              
         *****************************************************************/
         @Test
         public void testCalculatePowerForPositiveNegative() 
