@@ -200,6 +200,39 @@ public class View {
     btnReset.setFont(new Font("Arial Unicode MS", Font.PLAIN, 12));
     btnReset.setBounds(160, 141, 89, 30);
     frmSoen.getContentPane().add(btnReset);
+	
+	  
+    PowerOriginator originator = new PowerOriginator();
+    PowerCareTaker careTaker = new PowerCareTaker();
+    
+    JButton btnMW = new JButton("MW");
+    btnMW.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            originator.setState(result);
+            careTaker.add(originator.saveStateToMemento());
+        }
+        
+    });
+    
+    btnMW.setFont(new Font("Arial Unicode MS", Font.PLAIN, 12));
+    btnMW.setBounds(260, 141, 89, 30);
+    frmSoen.getContentPane().add(btnMW);
+    
+	  
+    JButton btnMR = new JButton("MR");
+    btnMR.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            originator.getStateFromMemento(careTaker.get(0));
+            answer.setText("Stored Result : " + originator.getState());
+        }
+    });
+    
+    btnMR.setFont(new Font("Arial Unicode MS", Font.PLAIN, 12));
+    btnMR.setBounds(360, 141, 89, 30);
+    frmSoen.getContentPane().add(btnMR);
+	  
+	  
+	  
   }
 	
   /**
