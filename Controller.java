@@ -72,10 +72,7 @@ public class Controller {
     double answer = 0;
     double logValue;
   
-    if (y == 0) {
-      answer = 1;
-      return answer;
-    }
+
     if (x < 0) {
       logValue = calculateNaturalLog(x * (-1));
     } else {
