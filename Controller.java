@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 
 /**
@@ -90,6 +91,14 @@ public class Controller {
       answer = answer + (numerator / denominator);
     } 
     
+    try {
+      DecimalFormat df = new DecimalFormat(".##########");
+      answer = Double.parseDouble(df.format(answer));
+    } catch (NumberFormatException e)
+    {
+      
+    }
+    
     if (x < 0 && y % 2 != 0) {
       return answer * (-1);
     } else {
@@ -105,8 +114,10 @@ public class Controller {
    */
   
   public static void main(String[] args) {
-    double x = 5;
-    double y = 500;
+    Scanner sc = new Scanner(System.in);
+    
+    double x = sc.nextDouble();
+    double y = sc.nextDouble();
     
     Controller c = new Controller();
     double answer = c.calculatePowerForReal(x, y);
